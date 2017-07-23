@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Home{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<a class="btn btn-default" href="{% url 'accounts:login' %}" role="button">Log in</a>
+<a class="btn btn-deep-orange" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+{% block splash %}
+  <div class="jumbotron jumbotron-carousel corporate-jumbo">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 hero">
+          <h1>{% include "_brandname.html" %}</h1>
+          <h2>INSPIRED BY GENIUS - DRIVEN BY PASSION</h2>
+          <p>Curabitur blandit mollis lacus phasellus blandit leo ut odio<br>
+             sed libero donec interdum metus hendrerit aliquet dolor<br>
+             diam sagittis ligula, eget egestas libero turpis vel mi.</p>
+	  <a class="btn btn-lg btn-deep-orange" href="{% url 'accounts:signup' %}" role="button">Register Now</a>
+    <a class="btn btn-lg btn-default"     href="{% url 'accounts:signup' %}" role="button">Get More Info</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock splash %}
+
+{% block container %}
+<!-- Benefits of the Django application -->
+<a name="about"></a>
+
+<section>
+    <div id="process" class="process section">
+        <div class="container">
+            <div class="row section-header text-center">
+                <div class="title col-xs-12">
+                    <h1>Creative Services</h1>
+                    <p>Simple but visually appealing.</p>
+                    <hr class="styled-title">
+                </div>
+            </div>
+            <div class="row">
+                <div class="process-block col-xs-12 col-sm-6 col-md-3">
+                    <div class="process-inner">
+                        <div class="icon-holder">
+                            <i class="icon-browser"></i>
+                        </div>
+                        <h3 class="heading">Creative Output</h3>
+                        <p class="description">Themes, Templates & More.</p>
+                        <a class="btn btn-outline" href="#">Read More</a>
+                    </div>
+                    <p class="process-callout text-center">Phasellus ullamcorper ipsum rutrum nunc. Morbi mattis ullamcorper velit. Donec posuere vulputate arcu.</p>
+                    <hr class="styled">
+                </div>
+                <div class="process-block col-xs-12 col-sm-6 col-md-3">
+                    <div class="process-inner">
+                        <div class="icon-holder">
+                            <i class="icon-global"></i>
+                        </div>
+                        <h3 class="heading">Code Development</h3>
+                        <p class="description">Simple, Useful & Reusable.</p>
+                        <a class="btn btn-outline" href="#">Read More</a>
+                    </div>
+                    <p class="process-callout text-center">Phasellus ullamcorper ipsum rutrum nunc. Morbi mattis ullamcorper velit. Donec posuere vulputate arcu.</p>
+                    <hr class="styled">
+                </div>
+                <div class="process-block col-xs-12 col-sm-6 col-md-3">
+                    <div class="process-inner">
+                        <div class="icon-holder">
+                            <i class="icon-genius"></i>
+                        </div>
+                        <h3 class="heading">Cyclic Iteration</h3>
+                        <p class="description">Test, Test & Test Again.</p>
+                        <a class="btn btn-outline" href="#">Read More</a>
+                    </div>
+                    <p class="process-callout text-center">Phasellus ullamcorper ipsum rutrum nunc. Morbi mattis ullamcorper velit. Donec posuere vulputate arcu.</p>
+                    <hr class="styled">
+                </div>
+                <div class="process-block col-xs-12 col-sm-6  col-md-3">
+                    <div class="process-inner">
+                        <div class="icon-holder">
+                            <i class="icon-camera"></i>
+                        </div>
+                        <h3 class="heading">Photo Reality</h3>
+                        <p class="description">Recreating Life as Art.</p>
+                        <a class="btn btn-outline" href="#">Read More</a>
+                    </div>
+                    <p class="process-callout text-center">Phasellus ullamcorper ipsum rutrum nunc. Morbi mattis ullamcorper velit. Donec posuere vulputate arcu.</p>
+                    <hr class="styled">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="callout" class="callout text-center">
+  <div class="container">
+    <div class="row">
+      <h1>S2 Design Dot Com</h1>
+      <h2>Inspired by Genius - Driven by Passion</h2>
+      <p>Curabitur blandit mollis lacus phasellus blandit leo ut odio<br>
+         sed libero donec interdum metus hendrerit aliquet dolor<br>
+         diam sagittis ligula, eget egestas libero turpis vel mi.</p>
+    </div>
+  </div>
+</section>
+
+<section id="devices" class="devices">
+  <div class="container">
+    <div class="row section-header text-center">
+        <div class="title col-xs-12">
+            <h1>Creative Devices</h1>
+            <p>Simplicity Personified.</p>
+            <hr class="styled-title">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <img class="img-responsive" src="{% static 'site/img/apple_tech.png' %}">
+      </div>
+
+      <div class="col-md-8 col-md-offset-1" style="border-right:10px solid #eee;">
+        <h2>iCreate Innovation</h2>
+            <p>Donec orci lectus, aliquam ut, faucibus non euismod id nulla. Curabitur turpis etiam iaculis nunc ac metus. Nulla neque dolor sagittis eget iaculis quis. Molestie non velit quisque ut nisi. Aenean viverra rhoncus pede. Aenean viverra rhoncus pede nunc nec neque.</p>
+            <button type="button" class="btn btn-deep-orange">More Info</button>
+      </div>
+    </div>
+    <hr class="styled">
+    <div class="row">
+
+      <div class="col-md-8 text-right" style="border-left:10px solid #eee;">
+        <h2>iCreate Visuals</h2>
+            <p>Donec orci lectus, aliquam ut, faucibus non euismod id nulla. Curabitur turpis etiam iaculis nunc ac metus. Nulla neque dolor sagittis eget iaculis quis. Molestie non velit quisque ut nisi. Aenean viverra rhoncus pede. Aenean viverra rhoncus pede nunc nec neque.</p>
+            <button type="button" class="btn btn-deep-orange">More Info</button>
+      </div>
+      <div class="col-md-3 col-md-offset-1">
+        <img class="img-responsive" src="{% static 'site/img/watch_tech.png' %}">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock container %}
+
+{% block scripts %}
+<script src="{% static 'site/js/site.js' %}"></script>
+{% endblock scripts %}
