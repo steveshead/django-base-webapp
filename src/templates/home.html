@@ -11,8 +11,8 @@
 
 {% block navbar-right %}
   {% if not user.is_authenticated %}
-<a class="btn btn-default" href="{% url 'accounts:login' %}" role="button">Log in</a>
-<a class="btn btn-deep-orange" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
+<a class="btn btn-sm btn-default" href="{% url 'accounts:login' %}" role="button">Log in</a>
+<a class="btn btn-sm btn-deep-orange" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
   {% else %}
     {{ block.super }}
   {% endif %}
@@ -111,8 +111,8 @@
       <h1>S2 Design Dot Com</h1>
       <h2>Inspired by Genius - Driven by Passion</h2>
       <p>Curabitur blandit mollis lacus phasellus blandit leo ut odio<br>
-         sed libero donec interdum metus hendrerit aliquet dolor<br>
-         diam sagittis ligula, eget egestas libero turpis vel mi.</p>
+         sed libero donec interdum metus hendrerit aliquet dolor</p><br>
+         <a class="btn btn-default" href="#">Register Now</a>
     </div>
   </div>
 </section>
