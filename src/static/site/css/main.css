@@ -591,10 +591,14 @@ section#callout {
     margin-top: 30px;
 }
 
-#myFooter h2 a{
+#myFooter h2 a {
     font-size: 50px;
     text-align: center;
     color: #fff;
+}
+
+#myFooter h2 a span {
+    color: #bf360c;
 }
 
 #myFooter a {

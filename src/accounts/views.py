@@ -8,9 +8,9 @@ from authtools import views as authviews
 from braces import views as bracesviews
 from django.conf import settings
 from . import forms
+from django.shortcuts import render
 
 User = get_user_model()
-
 
 class LoginView(bracesviews.AnonymousRequiredMixin,
                 authviews.LoginView):

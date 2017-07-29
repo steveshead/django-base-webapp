@@ -7,7 +7,7 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from authtools import forms as authtoolsforms
 from django.contrib.auth import forms as authforms
 from django.core.urlresolvers import reverse
-
+from crispy_forms.layout import Submit
 
 class LoginForm(AuthenticationForm):
     remember_me = forms.BooleanField(required=False, initial=False)

@@ -1,0 +1,15 @@
+{% extends "contact/contact_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Contact Us{% endblock %}
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="contact" %}
+{% endblock %}
+
+{% block form_heading %}Contact Us{% endblock %}
+
+{% block form %}
+  {% crispy form %}
+
+{% endblock form %}
