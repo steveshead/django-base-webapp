@@ -656,3 +656,17 @@ section#callout {
         text-align: center;
     }
 }
+
+/* thank you */
+.thank_you i.fa {
+  padding-bottom: 25px;
+  font-size: 96px;
+}
+
+.thank_you .btn {
+  margin-top: 25px;
+}
+
+.thank_you .btn:first-child {
+  margin-right: 10px;
+}
