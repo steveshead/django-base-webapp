@@ -1,0 +1,15 @@
+{% extends "contact/contact_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Subscribe{% endblock %}
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="subscribe" %}
+{% endblock %}
+
+{% block form_heading %}Subscribe to our Newsletter{% endblock %}
+
+{% block form %}
+  {% crispy form %}
+
+{% endblock form %}
