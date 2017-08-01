@@ -150,6 +150,21 @@
     </div>
   </div>
 </section>
+
+<section class="named">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        {% if user.is_authenticated %}
+    <h1>Welcome <span>{{ user.get_full_name }}</span> - we are glad you are here!</h1>
+{% else %}
+    <h1>Welcome - feel free to <a href="{% url 'accounts:signup' %}">sign up</a> or <a href="{% url 'accounts:login' %}">login</a>.</h1>
+{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="news" class="news">
     <div class="container">
       <div class="row section-header text-center">
