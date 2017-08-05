@@ -8,6 +8,7 @@ This project has the following basic apps:
 
 * accounts: User account app with sign up, password reset and more.
 * profiles: User profile app for authenticated users.
+* contact: Contact and subscribe forms.
 
 ## Installation
 

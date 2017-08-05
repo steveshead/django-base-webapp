@@ -3,13 +3,22 @@
 {% load crispy_forms_tags %}
 
 {% block container %}
-<section>
+<section class="contact-app">
 <div class="container form-box">
-  <div class="text-center">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Inspired by Genius<br>Drive by Passion</h1>
+      <p>Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo. Ut id nisl quis enim dignissim sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Sed fringilla mauris sit amet nibh. Ut non enim eleifend felis pretium feugiat.</p>
+    </div>
+
+    <div class="col-md-6">
+
     <h2>{% block form_heading %}{% endblock %}</h2>
-  </div>
   {% block form %}
   {% endblock %}
+
+    </div>
+  </div>
 </div>
 </section>
 

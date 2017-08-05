@@ -57,17 +57,19 @@
 
 <div id="sec3">
   <div class="container">
-    <div class="row">
+    <div class="row text-center">
       <div id="map-outer" class="col-md-12">
         <div id="address" class="col-md-4">
           <h2>Our Location</h2>
           <address>
-            <strong>Edge Solutions Ltd.</strong><br>
-            Taj Mahal<br>
-            Agra<br>
-            Uttar Pradesh<br>
-            India - 282001<br>
-            <abbr>P:</abbr> +91 0562 222 6431
+            <h2><i class="fa fa-code">&nbsp;</i>S2<span>Design</span></h2><br>
+            <ul>
+              <li><strong>Add</strong>: 1 High St, San Jose, CA 95118</li>
+              <li><strong>Tel</strong>: +1 (408) 555-1234</li>
+              <li><strong>Email</strong>: <a href="mailto:you@yourdomain.com">you@yourdomain.com</a></li>
+            </ul>
+            <button class="btn btn-deep-orange">Contact Us</button>
+            <button class="btn btn-default">Subscribe</button>
           </address>
         </div>
         <div id="map-container" class="col-md-8"></div>
@@ -83,7 +85,7 @@
 
    function init_map() {
      // Enter the latitude and longitude of your office here
-	 var myLocation = new google.maps.LatLng(27.176141, 78.042370);
+	 var myLocation = new google.maps.LatLng(37.3382, -121.8863);
 
      var mapOptions = {
           center: myLocation,

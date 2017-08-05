@@ -27,6 +27,7 @@
     <meta name="msapplication-TileImage" content="{% static 'site/ico/ms-icon-144x144.png' %}">
     <meta name="theme-color" content="#ffffff">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 
     <title>S2 DESIGN</title>
 
@@ -37,6 +38,8 @@
     {% block styles %}
     <link href="{% static 'site/css/main.css' %}" rel="stylesheet">
     <link href="{% static 'site/css/et-font.css' %}" rel="stylesheet">
+    <link href="{% static 'site/css/Lightbox-Gallery.css' %}" rel="stylesheet">
+
     {% endblock styles %}
 
     <!-- Custom tags for the head tag -->
@@ -195,6 +198,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
     {% block scripts %}
     {% endblock scripts %}
   </body>
