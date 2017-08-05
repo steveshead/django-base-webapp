@@ -681,6 +681,34 @@ section.named {
   margin-bottom: 40px;
 }
 
+/* brands */
+section.brand {
+  background-color: #333;
+  padding: 0;
+  margin-top: 20px;
+}
+.brands {
+  color:#313437;
+}
+
+.brands a {
+  display:block;
+  text-align:center;
+  padding:40px 0;
+}
+
+@media (max-width:767px) {
+  .brands a {
+    padding:30px 0;
+  }
+}
+
+.brands a img {
+  display:inline-block;
+  margin:10px 20px;
+  vertical-align:middle;
+}
+
 /* photos */
 .photos .title {
     padding-bottom: 60px;
