@@ -6,8 +6,15 @@ import profiles.urls
 import accounts.urls
 import contact.urls
 from . import views
+from wagtail.wagtailadmin import urls as wagtailadmin_urls
+from wagtail.wagtaildocs import urls as wagtaildocs_urls
+from wagtail.wagtailcore import urls as wagtail_urls
 
 urlpatterns = [
+    url(r'^cms/', include(wagtailadmin_urls)),
+    url(r'^documents/', include(wagtaildocs_urls)),
+    url(r'^pages/', include(wagtail_urls)),
+    url(r'^pages/', include(wagtail_urls)),
     url(r'^$', views.HomePage.as_view(), name='home'),
     url(r'^about/$', views.AboutPage.as_view(), name='about'),
     url(r'^template/$', views.TemplatePage.as_view(), name='template'),
