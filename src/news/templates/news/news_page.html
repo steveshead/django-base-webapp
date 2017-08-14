@@ -11,12 +11,15 @@
 {% block container %}
 <div class="container news pt-80 pb-50">
   <div class="row">
+    <div class="col-md-8 news-article">
 
+      <h1>{{ page.title }}</h1> {% if page.author %}
+      <p class="author"><strong>By</strong>:&nbsp; {{ page.author|richtext }}&nbsp;|&nbsp;<strong>On</strong>: {{ page.date }}</p>
+      {% else %}
+      <p><strong>By</strong>: Anonymous | <strong>On</strong>: {{ page.date }}</p>
+      {% endif %}
 
-    <h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date }}</p>
-
-<!--
+      <!-- Remove this line and line 37 to show categories
 {% with categories=page.categories.all %}
     {% if categories %}
         <h3>Posted in:</h3>
@@ -32,27 +35,65 @@
 {% endwith %}
 -->
 
-    <div class="intro">{{ page.intro }}</div>
+      <div class="intro">{{ page.intro }}</div>
 
-    {{ page.body|richtext }}
+      {{ page.body|richtext }} {% for item in page.gallery_images.all %}
+      <div style="margin: 25px 0">
+        {% image item.image fill-320x240 %}
+        <p>{{ item.caption }}</p>
+      </div>
+      {% endfor %}
 
-    {% for item in page.gallery_images.all %}
-        <div style="float: left; margin: 10px">
-            {% image item.image fill-320x240 %}
-            <p>{{ item.caption }}</p>
-        </div>
-    {% endfor %}
-
-    <button class="btn btn-deep-orange"><a class="color:white;" href="{{ page.get_parent.url }}">Return to blog</a></button>
-
-    {% if page.tags.all.count %}
-    <div class="tags">
-        <h3>Tags</h3>
-        {% for tag in page.tags.all %}
-            <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a>
-        {% endfor %}
+      <button class="btn btn-deep-orange"><a class="color:white;" href="{{ page.get_parent.url }}">Return to News</a></button> {% if page.tags.all.count %}
+      <div class="tags">
+        <h3>Tags</h3> {% for tag in page.tags.all %}
+        <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a> {% endfor %}
+      </div>
+      {% endif %}
     </div>
-{% endif %}
+
+    <div class="col-md-4 sidebar">
+      <div class="auth-section pt-40">
+      {% if not user.is_authenticated %}
+      <h3>Welcome to <span><strong>S2 DESIGN</strong></span><br />Please sign up or sign in!</h3>
+    <a class="btn btn-lg btn-default" href="{% url 'accounts:login' %}?next={{request.path}}" role="button"><i class="glyphicon glyphicon-log-in"></i>Log in</a>
+    <a class="btn btn-lg btn-deep-orange" href="{% url 'accounts:signup' %}?next={{request.path}}" role="button"><i class="glyphicon glyphicon-user"></i>Sign up</a>
+    <hr class="styled-sidebar">
+      {% else %}
+      <h3>Welcome <span>{{ user.get_full_name }}</span><br />We are glad you are here!</h3>
+      <a class="btn btn-lg btn-default" href="{% url 'profiles:show_self' %}"><i class="glyphicon glyphicon-user"></i>Profile</a>
+      <a class="btn btn-lg btn-deep-orange" href="{% url 'accounts:logout' %}?next={{request.path}}"><i class="glyphicon glyphicon-log-out"></i>Logout</a>
+      <hr class="styled-sidebar">
+      {% endif %}
+    </div>
+
+      <div class="col-md-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <span class="glyphicon glyphicon-bookmark"></span> Quick Shortcuts</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                  <a href="#" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Apps</a>
+                  <a href="#" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Bookmarks</a>
+                  <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Reports</a>
+                  <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                  <a href="#" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Users</a>
+                  <a href="#" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Notes</a>
+                  <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-picture"></span> <br/>Photos</a>
+                  <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-tag"></span> <br/>Tags</a>
+                </div>
+            </div>
+            <a href="http://www.jquery2dotnet.com/" class="btn btn-success btn-lg btn-block" role="button"><span class="glyphicon glyphicon-globe"></span> Website</a>
+        </div>
+    </div>
+</div>
+
+    </div>
   </div>
 </div>
 

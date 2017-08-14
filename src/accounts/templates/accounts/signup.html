@@ -11,8 +11,7 @@
 
   <div class="form-message">
     <p>
-      Already signed up? <a href="{% url 'accounts:login' %}">Log in</a>.
+      Already signed up? <a href="{% url 'accounts:login' %}?next={{request.path}}">Log in</a>.
     </p>
   </div>
 {% endblock form %}
-

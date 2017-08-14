@@ -14,6 +14,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 from wagtail.wagtailsnippets.models import register_snippet
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 @register_snippet
 class NewsCategory(models.Model):
@@ -45,6 +46,7 @@ class NewsIndexPage(Page):
         context['blogpages'] = blogpages
         return context
 
+
 class NewsPageTag(TaggedItemBase):
     content_object = ParentalKey('NewsPage', related_name='tagged_items')
 
@@ -62,6 +64,7 @@ class NewsTagIndexPage(Page):
         return context
 
 class NewsPage(Page):
+    author = RichTextField(blank=True)
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
@@ -82,6 +85,7 @@ class NewsPage(Page):
 
     content_panels = Page.content_panels + [
         MultiFieldPanel([
+            FieldPanel('author'),
             FieldPanel('date'),
             FieldPanel('tags'),
             FieldPanel('categories', widget=forms.CheckboxSelectMultiple),

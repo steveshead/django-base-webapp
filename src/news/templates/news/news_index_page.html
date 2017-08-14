@@ -22,8 +22,10 @@
             {% with post.main_image as main_image %}
                 {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
             {% endwith %}
-            {{ post.body|richtext }}
+            {{ post.body|richtext|truncatewords_html:20 }}
         {% endwith %}
+
+        <button class="btn btn-sm btn-deep-orange"><a href="{% pageurl post %}">Read More</a></button>
         <hr class="styled mb-50">
       </div>
       {% if forloop.counter|divisibleby:3 and not forloop.last %}
