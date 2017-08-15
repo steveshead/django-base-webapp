@@ -9,10 +9,8 @@
 {% endblock %}
 
 {% block container %}
-<div class="container news pt-80 pb-50">
+<div class="container news-article pt-80 pb-50">
   <div class="row">
-
-
 
     {% for post in blogpages %}
     <div class="col-md-4">
@@ -20,7 +18,7 @@
             <h1><a href="{% pageurl post %}">{{ post.title }}</a></h1>
             <p>{{ post.intro }}</p>
             {% with post.main_image as main_image %}
-                {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+                {% if main_image %}{% image main_image fill-240x150 %}{% endif %}
             {% endwith %}
             {{ post.body|richtext|truncatewords_html:20 }}
         {% endwith %}
@@ -33,6 +31,28 @@
       {% endif %}
     {% endfor %}
 
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="pagination">
+        {% if blogpages.has_previous %}
+          <li>
+            <a href="?page={{ blogpages.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+          </li>
+        {% endif %}
+        {% for page_num in blogpages.paginator.page_range %}
+          <li {% if page_num == blogpages.number %} class="active"{% endif %}>
+            <a href="?page={{ page_num }}">{{ page_num }}</a>
+          </li>
+        {% endfor %}
+        {% if resources.has_next %}
+          <li>
+            <a href="?page={{ blogpages.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+          </li>
+          {% endif %}
+      </ul>
+    </div>
   </div>
 </div>
 

@@ -906,9 +906,10 @@ section.brand {
 #myFooter ul {
   list-style-type: none;
   padding-left: 0;
-  line-height: 1.7;
+  line-height: 1.9;
   font-weight: 300;
   color: #ccc;
+  font-size: 14px;
 }
 
 #myFooter h5 {
@@ -1014,22 +1015,22 @@ section.brand {
 
 /* news */
 
-.news .intro {
+.news-article .intro {
   display: none;
 }
 
-.news img {
+.news-article img {
   padding: 8px;
   background: #fff;
   box-shadow: 0 0 1px #999;
   margin-bottom: 10px;
 }
 
-.news h1 {
+.news-article h1 {
   margin-bottom: 0;
 }
 
-.news .meta {
+.news-article .meta {
   text-indent: 2px;
   margin-bottom: 30px;
   font-size: 17px !important;
@@ -1045,7 +1046,7 @@ p.author {
   float: left;
 }
 
-.news button a {
+.news-article button a {
   font-weight: 300 !important;
   font-size: 13px;
 }
@@ -1057,6 +1058,23 @@ p.author {
 
 .news-article {
   padding-right: 30px;
+}
+
+.pagination > li.active > a {
+  background-color: #bf360c;
+  border-color: #972b09;
+  color: #f5f5f5;
+}
+
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+  background-color: #a72f0a;
+  border-color: #8f2809;
+  color: #f5f5f5;
 }
 
 

@@ -13,7 +13,8 @@
   <div class="row">
     <div class="col-md-8 news-article">
 
-      <h1>{{ page.title }}</h1> {% if page.author %}
+      <h1>{{ page.title }}</h1>
+      {% if page.author %}
       <p class="author"><strong>By</strong>:&nbsp; {{ page.author|richtext }}&nbsp;|&nbsp;<strong>On</strong>: {{ page.date }}</p>
       {% else %}
       <p><strong>By</strong>: Anonymous | <strong>On</strong>: {{ page.date }}</p>
@@ -44,13 +45,14 @@
       </div>
       {% endfor %}
 
-      <button class="btn btn-deep-orange"><a class="color:white;" href="{{ page.get_parent.url }}">Return to News</a></button> {% if page.tags.all.count %}
-      <div class="tags">
-        <h3>Tags</h3> {% for tag in page.tags.all %}
-        <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a> {% endfor %}
-      </div>
-      {% endif %}
-    </div>
+      <button class="btn btn-deep-orange"><a class="color:white;" href="{{ page.get_parent.url }}">Return to News</a></button>
+        {% if page.tags.all.count %}
+          <div class="tags">
+            <h3>Tags</h3> {% for tag in page.tags.all %}
+            <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a> {% endfor %}
+          </div>
+          {% endif %}
+        </div>
 
     <div class="col-md-4 sidebar">
       <div class="auth-section pt-40">
@@ -88,7 +90,7 @@
                   <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-tag"></span> <br/>Tags</a>
                 </div>
             </div>
-            <a href="http://www.jquery2dotnet.com/" class="btn btn-success btn-lg btn-block" role="button"><span class="glyphicon glyphicon-globe"></span> Website</a>
+            <a href="http://www.steve-shead.com" class="btn btn-success btn-lg btn-block" role="button"><span class="glyphicon glyphicon-globe"></span> Website</a>
         </div>
     </div>
 </div>
