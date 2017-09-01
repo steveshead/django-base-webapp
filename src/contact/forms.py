@@ -15,7 +15,7 @@ class SubscribeForm(forms.Form):
         self.helper.layout = Layout(
             Field('contact_name', placeholder="Full Name", autofocus=""),
             Field('contact_email', placeholder="Email Address"),
-            Submit('sign_in', 'Subscribe', css_class="btn btn-lg btn-deep-orange btn-block"),
+            Submit('sign_in', 'Subscribe', css_class="btn btn-lg btn-deep-orange"),
             )
         self.fields['contact_name'].label = "Your name:"
         self.fields['contact_email'].label = "Your email:"
@@ -33,7 +33,7 @@ class ContactForm(forms.Form):
             Field('contact_name', placeholder="Full Name", autofocus=""),
             Field('contact_email', placeholder="Email Address"),
             Field('content', placeholder=""),
-            Submit('sign_in', 'Submit', css_class="btn btn-lg btn-deep-orange btn-block"),
+            Submit('sign_in', 'Submit', css_class="btn btn-lg btn-deep-orange"),
             )
         self.fields['contact_name'].label = "Your name:"
         self.fields['contact_email'].label = "Your email:"

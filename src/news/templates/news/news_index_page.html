@@ -9,11 +9,12 @@
 {% endblock %}
 
 {% block container %}
-<div class="container news-article pt-80 pb-50">
+<div class="container news-articles pt-80 pb-50">
   <div class="row">
-
+<h1 class="section-header">Latest News</h1>
     {% for post in blogpages %}
     <div class="col-md-4">
+      <div class="post-wrapper">
         {% with post=post.specific %}
             <h1><a href="{% pageurl post %}">{{ post.title }}</a></h1>
             <p>{{ post.intro }}</p>
@@ -24,7 +25,7 @@
         {% endwith %}
 
         <button class="btn btn-sm btn-deep-orange"><a href="{% pageurl post %}">Read More</a></button>
-        <hr class="styled mb-50">
+      </div>
       </div>
       {% if forloop.counter|divisibleby:3 and not forloop.last %}
         </div><br><div class="row">

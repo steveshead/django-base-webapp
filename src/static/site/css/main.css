@@ -269,23 +269,6 @@ body>.navbar-transparent {
   margin-top: 100px;
 }
 
-section.contact-app, section.account-app {
-  margin-top: 36px !important;
-}
-
-section.contact-app h1 {
-  text-transform: uppercase;
-  font-weight: 900;
-  text-align: center;
-  margin-top: 50px;
-}
-
-section.contact-app p {
-  font-size: 17px;
-  margin-top: 30px;
-  text-align: center;
-}
-
 .mask {
   background: url("/static/site/img/overlays/06.png");
   width: 100%;
@@ -740,6 +723,11 @@ section.named {
   margin-bottom: 40px;
 }
 
+.post-wrapper {
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
 
 /* brands */
 
@@ -946,7 +934,7 @@ section.brand {
 }
 
 #myFooter .social-networks a {
-  font-size: 14px;
+  font-size: 17px;
   color: #ccc;
   padding: 5px;
   transition: 0.2s;
@@ -1012,8 +1000,65 @@ section.brand {
   margin-right: 10px;
 }
 
-
+/* CMS */
 /* news */
+body .news-articles {
+  background-color: #f5f5f5;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.news-articles button a {
+  font-weight: 300 !important;
+  font-size: 13px;
+}
+
+.news-articles .intro {
+  display: none;
+}
+
+.news-articles img {
+  padding: 8px;
+  background: #fff;
+  box-shadow: 0 0 1px #999;
+  margin-bottom: 10px;
+}
+
+.news-articles h1 {
+  margin-bottom: 0;
+  font-size: 28px;
+}
+
+.news-articles h2 {
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.news-articles h1 a {
+  font-weight: 300;
+}
+
+.news-articles .meta {
+  text-indent: 2px;
+  margin-bottom: 30px;
+  font-size: 17px !important;
+}
+
+.news-articles p{
+  font-size: 16px;
+}
+
+.news-articles h1.section-header {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.news-article button a {
+  font-weight: 300 !important;
+  font-size: 13px;
+}
 
 .news-article .intro {
   display: none;
@@ -1028,6 +1073,16 @@ section.brand {
 
 .news-article h1 {
   margin-bottom: 0;
+  font-size: 36px;
+}
+
+.news-article h2 {
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.news-article h1 a {
+  font-weight: 300;
 }
 
 .news-article .meta {
@@ -1046,18 +1101,9 @@ p.author {
   float: left;
 }
 
-.news-article button a {
-  font-weight: 300 !important;
-  font-size: 13px;
-}
-
 .tags a {
   font-weight: 300;
   font-size: 16px;
-}
-
-.news-article {
-  padding-right: 30px;
 }
 
 .pagination > li.active > a {
@@ -1114,4 +1160,55 @@ p.author {
 .auth-section h3 span {
   color: #bf360c;
   font-weight: 500;
+}
+
+/* contact app */
+
+section.contact-app, section.account-app {
+  margin-top: 36px !important;
+}
+
+section.contact-app h1 {
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 50px;
+}
+
+section.contact-app p {
+  font-size: 17px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+section.contact-app .btn-deep-orange {
+  width: 100%;
+}
+
+section.contact-app .btn-social-icon:hover {
+  margin-top: 0;
+}
+
+.contact-app hr.styled {
+  margin-top: 30px;
+}
+
+.subscribe img {
+  border: 8px solid #fff;
+  box-shadow: 0 0 1px #777;
+  margin: 20px auto;
+}
+
+.subscribe hr.styled {
+  margin-bottom: 30px;
+}
+
+.subscribe .social-bar {
+  margin-top: 20px;
+}
+
+iframe.gmap {
+  border: 10px solid #fff;
+  box-shadow: 0 0 1px #777;
+  margin-top: 30px;
 }
